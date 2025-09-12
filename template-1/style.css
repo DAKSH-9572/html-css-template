@@ -26,7 +26,7 @@
 }
 .nav .menu .menu-item li{
     cursor: pointer;
-    position: reletive;
+    position: relative;
 }
 .nav .menu .menu-item li img {
     width: 10px;
@@ -49,7 +49,7 @@
     list-style: none;
     display: none;
     transition: 2s;
-    padding: 10px 0;
+    padding: 10px 5px 20px;
     /* margin-top: px; */
     background-color: rgb(234, 234, 255);
     /* box-shadow: 5px 5px rgb(79, 79, 80); */
@@ -71,8 +71,24 @@
     gap: 40px;
     padding-right: 5vw;
 }
+.nav .menu-icon{
+    position: relative;
+}
 .nav .user .menu-icon img{
     width: 25px;
+    display: none;
+}
+.nav .user .menu-icon:hover .menu-content{
+    display: block;
+}
+.user .menu-icon .menu-content{
+    position: absolute;
+    background-color: #b5c8ff;
+    width: 300px;
+    height: 500px;
+    right: -10px;
+    top: 30px;
+    border-radius: 10px;
     display: none;
 }
 .nav .user .downloads{
@@ -90,12 +106,64 @@
     gap: 5px;
 }
 
-.nav .user .search img {
-    width: 18px;
-    height: 100px;
+.nav .user .search .sea {
+    width: 24px;
+    /* height: 100px; */
     justify-content: center;
     align-items: center;
 }
+.dro-menu-list{
+    padding: 10px 10px;
+}
+.dro-menu-item li{
+    list-style: none;
+}
+.dro-menu-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.dro-menu-item .dro{
+    position: relative;
+    padding: 5px 0;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.dro-menu-item .dro .dro-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dro-menu-item .dro img{
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+.dro-menu-item .dro:hover > img{
+    transform: rotate(180deg);
+}
+.dro-cont{
+    display: none;
+    position: relative;
+    /* top: 100%; */
+    /* left: 35%; */
+    background-color: #e6e6ff;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    z-index: 10;
+    margin-top: 5px;
+}
+.dro-menu-item .dro:hover > .dro-cont{
+    display: block;
+}
+.dro-cont li{
+    padding: 5px 0;
+    font-size: 14px;
+}
+
 
 .main {
     display: flex;
@@ -467,9 +535,15 @@
     }
     .user .menu-icon img{
         display: block;
+        justify-content: flex-end;
     }
-    .user .download{
+    .user .downloads{
         padding: 5px 10px;
+        display: none;
+    }
+    .nav .user .language {
+        display: none;
+        gap: 5px;
     }
     .user .search .sea{
         width: 0px;
